@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/homeScreen">
+
+    <fragment android:id="@+id/homeScreen" android:name="com.example.covid19tracker.homescreen.HomeScreen"
+              android:label="fragment_home_screen" tools:layout="@layout/fragment_home_screen">
+        <action android:id="@+id/action_homeScreen_to_covidStatus" app:destination="@id/covidStatus"
+                app:enterAnim="@anim/enter_to_right" app:exitAnim="@anim/go_back_left"
+                app:popEnterAnim="@anim/enter_to_left" app:popExitAnim="@anim/go_back_right"/>
+    </fragment>
+    <fragment android:id="@+id/covidStatus" android:name="com.example.covid19tracker.covidStatus.CovidStatus"
+              android:label="covid_status_fragment" tools:layout="@layout/covid_status_fragment">
+        <action android:id="@+id/action_covidStatus_to_covidWholeData" app:destination="@id/covidWholeData"
+                app:enterAnim="@anim/enter_to_right" app:exitAnim="@anim/go_back_left"
+                app:popEnterAnim="@anim/enter_to_left" app:popExitAnim="@anim/go_back_right"/>
+    </fragment>
+    <fragment android:id="@+id/covidWholeData" android:name="com.example.covid19tracker.wholedata.CovidWholeData"
+              android:label="covid_whole_data_fragment" tools:layout="@layout/covid_whole_data_fragment"/>
+</navigation>

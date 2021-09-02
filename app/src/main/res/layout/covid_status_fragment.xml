@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+                name="viewModel"
+                type="com.example.covid19tracker.CovidStatusViewModel"/>
+    </data>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".covidStatus.CovidStatus">
+
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="296dp"
+                android:id="@+id/uiImage"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/covid19" android:scaleType="fitXY">
+        </ImageView>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/countryName"
+                android:layout_width="352dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_country_name"
+                android:theme="@style/TextInputLayoutStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/floatingActionButton">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" android:backgroundTint="#F12C6F"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <androidx.appcompat.widget.AppCompatButton
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/goButton"
+                android:text="@string/proceed"
+                android:visibility="visible"
+                android:background="@drawable/button_selector"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/countryName"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="#E43F73"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.5">
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="66dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="264dp"
+                android:id="@+id/floatingActionButton"
+                android:backgroundTint="#C11651"
+                android:elevation="12dp"
+                app:srcCompat="@drawable/ic_keyboard_backspace_117116"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="28dp">
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
